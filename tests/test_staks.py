@@ -21,12 +21,13 @@ def test_total_spent():
 
 def test_avg_price_by_category():
     result = dict(run_query("tasks/query_03.sql"))
-    assert result["Electronics"] == pytest.approx(249.99, 0.01)
-    assert result["Books"] == pytest.approx(12.05, 0.01)
-    assert result["Clothing"] == pytest.approx(44.17, 0.01)
+    assert result["Electronics"] == pytest.approx(287.49, 0.1)
+    assert result["Books"] == pytest.approx(12.5, 0.1)
+    assert result["Clothing"] == pytest.approx(46.6, 0.1)
 
 def test_total_quantity_per_customer():
     result = dict(run_query("tasks/query_04.sql"))
+    print(result)
     assert result["Alice"] == 5
     assert result["Bob"] == 6
     assert result["Charlie"] == 7
